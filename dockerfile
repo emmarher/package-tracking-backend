@@ -34,11 +34,12 @@ COPY --from=builder /usr/src/app/dist ./dist
 # Esto reduce drásticamente el tamaño de la imagen final, lo cual es clave para el ahorro.
 RUN npm install --omit=dev
 
+# Cambia la propiedad de los archivos como usuario 'root'
+RUN chown -R node:node /usr/src/app
+
 # Establece el usuario y los permisos de forma no privilegiada.
 # Esto es una buena práctica de seguridad que también es recomendada por Cloud Run.
 USER node
-# Puedes omitir esta línea si tu app necesita escribir en el disco.
-RUN chown -R node:node /usr/src/app
 
 # Expone el puerto donde tu aplicación escuchará.
 EXPOSE 8080
