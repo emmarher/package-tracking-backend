@@ -21,3 +21,7 @@ steps:
 
 images:
 - gcr.io/$PROJECT_ID/my-express-app:$COMMIT_SHA
+
+# Añade este bloque al final de tu archivo cloudbuild.yaml
+options:
+  logging: CLOUD_LOGGING_ONLY
