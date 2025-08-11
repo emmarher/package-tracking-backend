@@ -9,6 +9,8 @@ COPY package*.json ./
 
 # Instala las dependencias del proyecto
 RUN npm install --only=production
+# Paso de compilación: Ejecuta tsc para compilar TypeScript
+RUN npm run build
 
 # Copia el código de tu aplicación al contenedor
 COPY . .
