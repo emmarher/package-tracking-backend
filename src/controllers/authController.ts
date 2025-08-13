@@ -62,6 +62,6 @@ export const getProfile = async (req: any, res: Response) => {
   }
 };
 
-export const testEndpoint = (req: Request, res: Response) => {
-  res.json({ message: 'Test endpoint working!' });
+export const testEndpoint = (req: any, res: any) => {
+  res.status(200).json({ message: 'Test endpoint working!' });
 };
