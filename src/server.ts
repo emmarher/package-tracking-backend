@@ -9,6 +9,7 @@ import packageRoutes from './routes/packages';
 import locationRoutes from './routes/locations';
 import userRoutes from './routes/users';
 import { initializeSocket } from './socket/socketHandler';
+import { testEndpoint } from './controllers/authController';
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/packages', packageRoutes);
 app.use('/api/locations', locationRoutes);
 app.use('/api/users', userRoutes);
+app.get('/api/test', testEndpoint);
 
 // Ruta de salud
 app.get('/health', (req, res) => {
