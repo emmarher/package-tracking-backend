@@ -6,7 +6,7 @@ const router = Router();
 
 router.post('/login', login);
 router.get('/profile', authenticateToken, getProfile);
-router.post('/test', testEndpoint);
+router.get('/test', testEndpoint);
 
 export default router;
 
